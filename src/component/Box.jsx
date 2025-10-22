@@ -1,10 +1,10 @@
 import React from 'react'
 
 const Box = (props) => {
-  let judgement = props.judgement;
-  let judgeBoxClass = props.judgement === null ? '' : (props.judgement == '무승부' ? 'draw-box' : (props.judgement == '승리' ? 'win-box' : 'lose-box'));
-  let judgeFontClass = props.judgement === null ? '' : (props.judgement == '무승부' ? 'draw-font' : (props.judgement == '승리' ? 'win-font' : 'lose-font'));
-  if(props.judgement && props.title === '컴퓨터'){
+  let judgement = props.judgement;//승패여부 판단
+  let judgeBoxClass = props.judgement === null ? '' : (props.judgement == '무승부' ? 'draw-box' : (props.judgement == '승리' ? 'win-box' : 'lose-box'));//박스 스타일용으로 만든 변수
+  let judgeFontClass = props.judgement === null ? '' : (props.judgement == '무승부' ? 'draw-font' : (props.judgement == '승리' ? 'win-font' : 'lose-font'));//폰트 스타일용으로 만든 변수
+  if(props.judgement && props.title === '컴퓨터'){//컴퓨터 승패여부 판단 로직
     if(props.judgement === '승리'){
       judgement = '패배';
       judgeBoxClass = 'lose-box';

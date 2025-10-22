@@ -34,30 +34,30 @@ function App() {
   const [totCnt, setTotCnt] = useState(0);                    //전체 경기 횟수
 
   const play = (userChoice) => {//가위바위보 하는 함수
-    setSelect(choice[userChoice]);//사용자 가위바위보 정함
-    let computer = playComputer();
-    setComputerSelect(computer);//컴퓨터 가위바위보 정함
+    setSelect(choice[userChoice]);//state에 저장
+    let computer = playComputer();//컴퓨터 가위바위보 정함
+    setComputerSelect(computer);//state에 저장
     judge(choice[userChoice], computer);//승패여부 판단 함수, 횟수까지 셈
   };
 
-  const playComputer = () => {
+  const playComputer = () => {//컴퓨터가 가위바위보 정하는 함수
     let itemArray = Object.keys(choice);//객체의 키값만 뽑아서 배열로 반환
     let computerChoice = Math.floor(Math.random()*itemArray.length)
 
     return choice[itemArray[computerChoice]];
   };
 
-  const judge = (userSelect, computerSelect) => {
-    setTotCnt((prev) => prev + 1);
-    if(userSelect.name === computerSelect.name){
+  const judge = (userSelect, computerSelect) => {//가위바위보 승패 판단, 이긴 횟수와 경기 횟수까지 셀 수 있도록 하는 함수
+    setTotCnt((prev) => prev + 1);//전체 경기 횟수 state 증가
+    if(userSelect.name === computerSelect.name){//가위바위보 승패 결정
       setJudgement(judgeObj.draw);
     } else if(userSelect.name === 'Rock'){
       if(computerSelect.name === 'Scissors'){
         setJudgement(judgeObj.win);
-        setUserWinCnt((prev) => prev + 1);
+        setUserWinCnt((prev) => prev + 1);//사용자가 이기면 사용자 이긴 횟수 state 증가
       }else{
         setJudgement(judgeObj.lose);
-        setComputerWinCnt((prev) => prev + 1);
+        setComputerWinCnt((prev) => prev + 1);//컴퓨터가 이기면 컴퓨터 이긴 횟수 state 증가
       }
     } else if(userSelect.name === 'Scissors'){
       if(computerSelect.name === 'Paper'){
@@ -78,10 +78,13 @@ function App() {
     }
   };
 
-  const resetCnt = () => {
+  const resetCnt = () => {//경기초기화 함수
     setTotCnt(0);
     setUserWinCnt(0);
-    setComputerWinCnt(0);
+    setComputerWinCnt(0);//이긴 횟수와 경기 횟수를 0으로 초기화
+    setSelect(null);
+    setComputerSelect(null);
+    setJudgement(null);//아예 초기화면처럼 보일 수 있도록 사용자 가위바위보, 컴퓨터 가위바위보, 승패여부 state도 초기화
   }
 
   return (

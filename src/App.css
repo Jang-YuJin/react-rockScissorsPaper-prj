@@ -98,6 +98,7 @@
     color: #97E5EF;
 }
 
+/* 패드용 */
 @media screen and (max-width: 750px){
     .play-cnt{
     display: flex;
@@ -112,6 +113,7 @@
 }
 }
 
+/* 큰 핸드폰 화면 */
 @media screen and (max-width: 450px){
     .container{
     display: flex;
@@ -138,6 +140,7 @@
 }
 }
 
+/* 작은 핸드폰 화면 */
 @media screen and (max-width: 376px){
     .container{
     display: flex;
