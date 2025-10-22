@@ -32,6 +32,7 @@
 
 .title{
     font-size: medium;
+    margin: 10px;
 }
 
 .jugdge, .desc{
@@ -48,8 +49,8 @@
 .img-button{
     border: none;
     border-radius: 15px;
-    background-color: #F4F8D3;
-    margin: 10px 10px;
+    background-color: #F8C4B4;
+    margin: 10px;
     width: auto;
 }
 
@@ -58,4 +59,103 @@
     justify-content: space-between;
     width: 700px;
     margin: 20px;
+}
+
+.reset-button{
+    padding: 10px;
+    background-color: #FF8787;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.win-cnt{
+    margin: 10px;
+}
+
+.draw-box{
+    border-color: #ADCF9F;
+}
+
+.win-box{
+    border-color: #F37878;
+}
+
+.lose-box{
+    border-color: #97E5EF;
+}
+
+.draw-font{
+    color: #ADCF9F;
+}
+
+.win-font{
+    color: #F37878;
+}
+
+.lose-font{
+    color: #97E5EF;
+}
+
+@media screen and (max-width: 750px){
+    .play-cnt{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 20px;
+}
+
+    .img-size{
+    width: 150px;
+    height: 150px;
+}
+}
+
+@media screen and (max-width: 450px){
+    .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+    .box-container{
+    padding: 10px;
+}
+
+    .play-cnt{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+    .img-size{
+    width: 200px;
+    height: 200px;
+}
+}
+
+@media screen and (max-width: 376px){
+    .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+    .play-cnt{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px;
+}
+
+    .img-size{
+    width: 100px;
+    height: 100px;
+}
 }
